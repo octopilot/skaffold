@@ -342,3 +342,8 @@ func ReadRefFromFakeTar(input io.Reader) (string, error) {
 
 	return manifest[0].RepoTags[0], nil
 }
+
+// DaemonHost is the fake daemon's address: none (ko's publisher then takes the host from the environment).
+func (f *FakeAPIClient) DaemonHost() string {
+	return ""
+}

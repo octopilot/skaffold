@@ -19,6 +19,8 @@ package ko
 import (
 	"testing"
 
+	mobyclient "github.com/moby/moby/client"
+
 	"github.com/GoogleContainerTools/skaffold/v2/pkg/skaffold/version"
 	"github.com/GoogleContainerTools/skaffold/v2/testutil"
 )
@@ -68,7 +70,10 @@ func TestPublishOptions(t *testing.T) {
 	}
 	for _, test := range tests {
 		testutil.Run(t, test.description, func(t *testutil.T) {
-			dockerClient := fakeDockerAPIClient(test.ref, "imageID")
+			// publishOptions only hands the client to ko; a moby client (what go-containerregistry 0.22 takes) that
+			// never dials is enough to check it is passed through.
+			dockerClient, err := mobyclient.New(mobyclient.WithHost("unix:///nonexistent/docker.sock"))
+			t.CheckNoError(err)
 			po, err := publishOptions(test.ref, test.pushImages, dockerClient, test.insecureRegistries)
 			t.CheckNoError(err)
 			if !po.Bare || po.BaseImportPaths || po.PreserveImportPaths {

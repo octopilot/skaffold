@@ -54,9 +54,9 @@ require (
 	github.com/cenkalti/backoff/v4 v4.3.0
 	github.com/containerd/containerd v1.7.30
 	github.com/distribution/reference v0.6.0
-	github.com/docker/cli v29.2.1+incompatible
+	github.com/docker/cli v29.7.2+incompatible
 	github.com/docker/docker v28.5.2+incompatible
-	github.com/docker/go-connections v0.6.0
+	github.com/docker/go-connections v0.7.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/evanphx/json-patch v5.9.11+incompatible
 	github.com/fatih/semgroup v1.3.0
@@ -66,7 +66,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8
 	github.com/golang/protobuf v1.5.4
 	github.com/google/go-cmp v0.7.0
-	github.com/google/go-containerregistry v0.20.7
+	github.com/google/go-containerregistry v0.22.1
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/google/ko v0.18.1
 	github.com/google/uuid v1.6.0
@@ -83,7 +83,7 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/moby/buildkit v0.27.1
 	github.com/moby/docker-image-spec v1.3.1
-	github.com/moby/moby/client v0.2.2
+	github.com/moby/moby/client v0.5.1
 	github.com/moby/patternmatcher v0.6.0
 	github.com/opencontainers/go-digest v1.0.0
 	github.com/opencontainers/image-spec v1.1.1
@@ -103,20 +103,20 @@ require (
 	go.lsp.dev/jsonrpc2 v0.10.0
 	go.lsp.dev/protocol v0.12.0
 	go.lsp.dev/uri v0.3.0
-	go.opentelemetry.io/otel v1.39.0
+	go.opentelemetry.io/otel v1.41.0
 	go.opentelemetry.io/otel/exporters/jaeger v1.17.0
 	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric v1.38.0
 	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.38.0
-	go.opentelemetry.io/otel/metric v1.39.0
+	go.opentelemetry.io/otel/metric v1.41.0
 	go.opentelemetry.io/otel/sdk v1.39.0
 	go.opentelemetry.io/otel/sdk/metric v1.39.0
-	go.opentelemetry.io/otel/trace v1.39.0
-	golang.org/x/crypto v0.47.0
-	golang.org/x/oauth2 v0.34.0
-	golang.org/x/sync v0.19.0
-	golang.org/x/sys v0.41.0
-	golang.org/x/term v0.39.0
-	golang.org/x/tools v0.40.0
+	go.opentelemetry.io/otel/trace v1.41.0
+	golang.org/x/crypto v0.55.0
+	golang.org/x/oauth2 v0.36.0
+	golang.org/x/sync v0.22.0
+	golang.org/x/sys v0.47.0
+	golang.org/x/term v0.45.0
+	golang.org/x/tools v0.49.0
 	google.golang.org/api v0.260.0
 	google.golang.org/genproto v0.0.0-20251213004720-97cd9d5aeac2
 	google.golang.org/genproto/googleapis/api v0.0.0-20251213004720-97cd9d5aeac2
@@ -199,7 +199,6 @@ require (
 	github.com/containerd/errdefs/pkg v0.3.0 // indirect
 	github.com/containerd/log v0.1.0 // indirect
 	github.com/containerd/platforms v1.0.0-rc.2 // indirect
-	github.com/containerd/stargz-snapshotter/estargz v0.18.1 // indirect
 	github.com/containerd/ttrpc v1.2.7 // indirect
 	github.com/containerd/typeurl/v2 v2.2.3 // indirect
 	github.com/coreos/go-oidc/v3 v3.17.0 // indirect
@@ -273,7 +272,7 @@ require (
 	github.com/jedisct1/go-minisign v0.0.0-20241212093149-d2f9f49435c7 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kevinburke/ssh_config v1.4.0 // indirect
-	github.com/klauspost/compress v1.18.3 // indirect
+	github.com/klauspost/compress v1.19.2 // indirect
 	github.com/klauspost/cpuid/v2 v2.3.0 // indirect
 	github.com/liggitt/tabwriter v0.0.0-20181228230101-89fcab3d43de // indirect
 	github.com/lucasb-eyer/go-colorful v1.3.0 // indirect
@@ -284,7 +283,7 @@ require (
 	github.com/mitchellh/ioprogress v0.0.0-20180201004757-6a23b12fa88e // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/moby/go-archive v0.2.0 // indirect
-	github.com/moby/moby/api v1.53.0 // indirect
+	github.com/moby/moby/api v1.55.0 // indirect
 	github.com/moby/spdystream v0.5.0 // indirect
 	github.com/moby/sys/atomicwriter v0.1.0 // indirect
 	github.com/moby/sys/sequential v0.6.0 // indirect
@@ -337,7 +336,6 @@ require (
 	github.com/tonistiigi/go-csvvalue v0.0.0-20240814133006-030d3b2625d0 // indirect
 	github.com/transparency-dev/formats v0.0.0-20251208091212-1378f9e1b1b7 // indirect
 	github.com/transparency-dev/merkle v0.0.2 // indirect
-	github.com/vbatts/tar-split v0.12.2 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xeipuuv/gojsonpointer v0.0.0-20190905194746-02993c407bfb // indirect
@@ -354,9 +352,9 @@ require (
 	go.uber.org/zap v1.27.1 // indirect
 	go.yaml.in/yaml/v2 v2.4.3 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/mod v0.32.0 // indirect
-	golang.org/x/net v0.49.0 // indirect
-	golang.org/x/text v0.33.0 // indirect
+	golang.org/x/mod v0.39.0 // indirect
+	golang.org/x/net v0.58.0 // indirect
+	golang.org/x/text v0.41.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251222181119-0a764e51fe1b // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect

@@ -17,6 +17,7 @@ limitations under the License.
 package ko
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/google/go-containerregistry/pkg/name"
@@ -24,6 +25,7 @@ import (
 	"github.com/google/ko/pkg/commands"
 	"github.com/google/ko/pkg/commands/options"
 	"github.com/google/ko/pkg/publish"
+	mobyclient "github.com/moby/moby/client"
 
 	"github.com/GoogleContainerTools/skaffold/v2/pkg/skaffold/version"
 )
@@ -31,7 +33,20 @@ import (
 func (b *Builder) newKoPublisher(ref string) (publish.Interface, error) {
 	var dockerClient daemon.Client
 	if b.localDocker != nil {
-		dockerClient = b.localDocker.RawClient()
+		// go-containerregistry 0.22 talks to the daemon through github.com/moby/moby/client, while the rest of
+		// skaffold still holds a github.com/docker/docker client: ko gets a moby client of its own, for the same
+		// daemon host (TLS and the rest from the environment, as the docker client takes them).
+		opts := []mobyclient.Opt{mobyclient.FromEnv, mobyclient.WithAPIVersionNegotiation()}
+		if raw := b.localDocker.RawClient(); raw != nil {
+			if host := raw.DaemonHost(); host != "" {
+				opts = append(opts, mobyclient.WithHost(host))
+			}
+		}
+		c, err := mobyclient.New(opts...)
+		if err != nil {
+			return nil, fmt.Errorf("creating a docker client for ko: %w", err)
+		}
+		dockerClient = c
 	}
 	po, err := publishOptions(ref, b.pushImages, dockerClient, b.insecureRegistries)
 	if err != nil {
